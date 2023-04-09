@@ -4,8 +4,16 @@ import Botton from './components/botton';
 import logoFreecodecamp from './images/freecodecamp-logo.png';
 import Screen from './components/screen';
 import BottonClear from './components/botton-clear';
+import { useState } from 'react'
 
 function App() {
+  const [input, setInput] = useState('');
+
+  const addInput = val => {
+    setInput(input + val)
+  };
+
+
   return (
     <div className="App">
       <div className='freecodecamp-logo-container'>
@@ -14,34 +22,34 @@ function App() {
       </div>
       <div className='calculater-container'>
         
-        <Screen />
+        <Screen input = {input}/>
         
         <div className='fila'>
-          <Botton>1</Botton>
-          <Botton>2</Botton>
-          <Botton>3</Botton>
-          <Botton>+</Botton>
+          <Botton handClic = {addInput}>1</Botton>
+          <Botton handClic = {addInput}>2</Botton>
+          <Botton handClic = {addInput}>3</Botton>
+          <Botton handClic = {addInput}>+</Botton>
         </div>
         <div className='fila'>
-          <Botton>4</Botton>
-          <Botton>5</Botton>
-          <Botton>6</Botton>
-          <Botton>-</Botton>
+          <Botton handClic = {addInput}>4</Botton>
+          <Botton handClic = {addInput}>5</Botton>
+          <Botton handClic = {addInput}>6</Botton>
+          <Botton handClic = {addInput}>-</Botton>
         </div>
         <div className='fila'>
-          <Botton>7</Botton>
-          <Botton>8</Botton>
-          <Botton>9</Botton>
-          <Botton>*</Botton>
+          <Botton handClic = {addInput}>7</Botton>
+          <Botton handClic = {addInput}>8</Botton>
+          <Botton handClic = {addInput}>9</Botton>
+          <Botton handClic = {addInput}>*</Botton>
         </div>
         <div className='fila'>
-          <Botton>=</Botton>
-          <Botton>0</Botton>
-          <Botton>.</Botton>
-          <Botton>/</Botton>
+          <Botton handClic = {addInput}>=</Botton>
+          <Botton handClic = {addInput}>0</Botton>
+          <Botton handClic = {addInput}>.</Botton>
+          <Botton handClic = {addInput}>/</Botton>
         </div>
         <div className='fila'>
-          <BottonClear>Clear</BottonClear>
+          <BottonClear handClear = {() => setInput('')}>Clear</BottonClear>
         </div>
 
       </div>

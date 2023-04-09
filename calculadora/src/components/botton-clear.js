@@ -3,7 +3,7 @@ import '../styles/style-clear.css'
 
 
 const BottonClear = (props) => (
-    <div className="botton-clear">
+    <div className="botton-clear" onClick= {props.handClear} >
         {props.children}
     </div>
 )
