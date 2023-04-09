@@ -5,6 +5,8 @@ import logoFreecodecamp from './images/freecodecamp-logo.png';
 import Screen from './components/screen';
 import BottonClear from './components/botton-clear';
 import { useState } from 'react'
+import { evaluate } from 'mathjs'
+
 
 function App() {
   const [input, setInput] = useState('');
@@ -12,6 +14,10 @@ function App() {
   const addInput = val => {
     setInput(input + val)
   };
+
+  const calculateResult = () => {
+    setInput(evaluate(input))
+  }
 
 
   return (
@@ -43,7 +49,7 @@ function App() {
           <Botton handClic = {addInput}>*</Botton>
         </div>
         <div className='fila'>
-          <Botton handClic = {addInput}>=</Botton>
+          <Botton handClic = {calculateResult}>=</Botton>
           <Botton handClic = {addInput}>0</Botton>
           <Botton handClic = {addInput}>.</Botton>
           <Botton handClic = {addInput}>/</Botton>
