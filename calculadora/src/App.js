@@ -3,6 +3,7 @@ import './App.css';
 import Botton from './components/botton';
 import logoFreecodecamp from './images/freecodecamp-logo.png';
 import Screen from './components/screen';
+import BottonClear from './components/botton-clear';
 
 function App() {
   return (
@@ -39,7 +40,9 @@ function App() {
           <Botton>.</Botton>
           <Botton>/</Botton>
         </div>
-        <div className='fila'></div>
+        <div className='fila'>
+          <BottonClear>Clear</BottonClear>
+        </div>
 
       </div>
 
